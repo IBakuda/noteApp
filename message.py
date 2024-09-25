@@ -19,9 +19,9 @@ class Message:
         with open(self.fileName, 'w') as fp:
             dump(self.mess, fp)
 
-    def add_message(self, titlee='Title', text='Text'):
+    def add_message(self, titlee='Title', text='Text', categry='categry'):
         title = titlee
-        self.mess[title] = {'date': self.dat, 'text': text}
+        self.mess[title] = {'creatingDate': self.dat, 'editDate': self.dat, 'text': text, 'category': categry}
         self.save()
 
     def remove_message(self, title):
@@ -36,14 +36,14 @@ class Message:
         return self.mess.get(title, None)
 
 
-a = Message()
+# a = Message()
 
-print(a.mess)
+# print(a.mess)
 
-# добавлять пользователя
-a.add_message("Poll", '124')
-a.add_message("gfdgdf", '231231')
-a.remove_message("gfdgdf")
+# # добавлять пользователя
+# a.add_message("Poll", '124')
+# a.add_message("gfdgdf", '231231')
+# a.remove_message("gfdgdf")
 
-# Сохранить файл
-a.save()
+# # Сохранить файл
+# a.save()
